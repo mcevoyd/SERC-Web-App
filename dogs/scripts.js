@@ -15,9 +15,10 @@ request.onload = function () {
 
   // Begin accessing JSON data here
   var data = JSON.parse(this.response);
+  i = 0
   if (request.status >= 200 && request.status < 400) {
-    data.forEach(movie => {
-      var images = data.message;
+    var images = data.message;
+    data.forEach(movie => {      
       images.forEach(image => {
         const card = document.createElement('div')
         card.setAttribute('class', 'card')
